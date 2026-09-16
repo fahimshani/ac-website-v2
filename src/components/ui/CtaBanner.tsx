@@ -3,6 +3,26 @@ import { Container } from "@/components/ui/Container";
 import { Button, type ButtonProps } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
 
+interface CtaBannerBaseProps {
+  title: string;
+  description: string;
+  meta?: ReactNode;
+}
+
+type CtaBannerProps =
+  | (CtaBannerBaseProps & {
+      buttonLabel: string;
+      buttonHref: string;
+      buttonIcon?: ButtonProps["icon"];
+      buttonSlot?: undefined;
+    })
+  | (CtaBannerBaseProps & {
+      buttonLabel?: undefined;
+      buttonHref?: undefined;
+      buttonIcon?: undefined;
+      buttonSlot: ReactNode;
+    });
+
 export function CtaBanner({
   title,
   description,
@@ -10,14 +30,8 @@ export function CtaBanner({
   buttonLabel,
   buttonHref,
   buttonIcon,
-}: {
-  title: string;
-  description: string;
-  meta?: ReactNode;
-  buttonLabel: string;
-  buttonHref: string;
-  buttonIcon?: ButtonProps["icon"];
-}) {
+  buttonSlot,
+}: CtaBannerProps) {
   return (
     <Container>
       <Reveal className="flex flex-col items-center gap-5 rounded-2xl bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 px-6 py-8 text-center sm:flex-row sm:justify-between sm:px-10 sm:text-left">
@@ -30,9 +44,11 @@ export function CtaBanner({
             </div>
           )}
         </div>
-        <Button href={buttonHref} variant="inverse" icon={buttonIcon} className="shrink-0">
-          {buttonLabel}
-        </Button>
+        {buttonSlot ?? (
+          <Button href={buttonHref} variant="inverse" icon={buttonIcon} className="shrink-0">
+            {buttonLabel}
+          </Button>
+        )}
       </Reveal>
     </Container>
   );

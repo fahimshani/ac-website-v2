@@ -34,7 +34,7 @@ interface CommonProps {
   children: ReactNode;
 }
 
-type ButtonAsButton = CommonProps &
+export type ButtonAsButton = CommonProps &
   ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined };
 
 type ButtonAsLink = CommonProps &

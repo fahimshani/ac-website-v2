@@ -2,7 +2,7 @@ import { CheckCircle2, XCircle } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { CenteredHeading } from "@/components/ui/CenteredHeading";
 import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
+import { SetUpDirectDebitButton } from "@/components/direct-debit-setup/SetUpDirectDebitButton";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { StaggerItem } from "@/components/motion/StaggerItem";
 import { comparisonRows } from "@/lib/direct-debit-data";
@@ -73,9 +73,7 @@ export function ComparisonTableSection() {
               simpler, more reliable monthly experience, we recommend
               switching to Direct Debit via GoCardless.
             </p>
-            <Button href="/direct-debit/setup" className="shrink-0">
-              Set Up Direct Debit
-            </Button>
+            <SetUpDirectDebitButton className="shrink-0" />
           </StaggerItem>
         </StaggerGroup>
       </Container>

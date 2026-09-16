@@ -2,6 +2,7 @@ import { Anchor, CreditCard, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
+import { SetUpDirectDebitButton } from "@/components/direct-debit-setup/SetUpDirectDebitButton";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { StaggerItem } from "@/components/motion/StaggerItem";
 
@@ -83,9 +84,9 @@ export function Hero() {
             </p>
 
             <div className="mt-6 flex flex-col gap-3">
-              <Button href="/direct-debit/setup" className="w-full">
+              <SetUpDirectDebitButton className="w-full">
                 Direct Debit Setup
-              </Button>
+              </SetUpDirectDebitButton>
               <Button href="/online-payment" variant="secondary" className="w-full">
                 Online Payment
               </Button>

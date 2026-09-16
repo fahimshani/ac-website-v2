@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { CenteredHeading } from "@/components/ui/CenteredHeading";
 import { StepCard } from "@/components/ui/StepCard";
 import { CtaBanner } from "@/components/ui/CtaBanner";
+import { SetUpDirectDebitButton } from "@/components/direct-debit-setup/SetUpDirectDebitButton";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { StaggerItem } from "@/components/motion/StaggerItem";
 import { setupSteps } from "@/lib/direct-debit-data";
@@ -39,8 +40,7 @@ export function SetupProcessSection() {
               <ShieldCheck className="h-3.5 w-3.5" /> Secured by GoCardless
             </>
           }
-          buttonLabel="Set Up Direct Debit"
-          buttonHref="/direct-debit/setup"
+          buttonSlot={<SetUpDirectDebitButton variant="inverse" className="shrink-0" />}
         />
       </div>
     </section>

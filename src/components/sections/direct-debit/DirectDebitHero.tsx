@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Rating } from "@/components/ui/Rating";
 import { Avatar } from "@/components/ui/Avatar";
 import { CheckListItem } from "@/components/ui/CheckListItem";
+import { SetUpDirectDebitButton } from "@/components/direct-debit-setup/SetUpDirectDebitButton";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { StaggerItem } from "@/components/motion/StaggerItem";
 
@@ -59,9 +60,7 @@ export function DirectDebitHero() {
             </StaggerItem>
 
             <StaggerItem className="mt-8 flex flex-wrap gap-3">
-              <Button href="/direct-debit/setup" variant="inverse" icon={<CreditCard className="h-4 w-4" />}>
-                Set Up Direct Debit
-              </Button>
+              <SetUpDirectDebitButton variant="inverse" icon={<CreditCard className="h-4 w-4" />} />
               <Button href="/online-payment" variant="outlineLight" icon={<ArrowRight className="h-4 w-4" />}>
                 Continue to online payment
               </Button>

@@ -15,9 +15,13 @@ export function LinkArrow({
   tone = "brand",
   className,
 }: LinkArrowProps) {
+  const isExternal = /^https?:\/\//.test(href);
+
   return (
     <Link
       href={href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       className={cn(
         "inline-flex items-center gap-1 text-sm font-semibold transition-colors",
         tone === "brand"

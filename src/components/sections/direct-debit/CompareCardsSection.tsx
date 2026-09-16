@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { CheckListItem } from "@/components/ui/CheckListItem";
+import { SetUpDirectDebitButton } from "@/components/direct-debit-setup/SetUpDirectDebitButton";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { StaggerItem } from "@/components/motion/StaggerItem";
 import { comparisonRows } from "@/lib/direct-debit-data";
@@ -43,9 +44,7 @@ export function CompareCardsSection() {
                   ))}
                 </ul>
 
-                <Button href="/direct-debit/setup" variant="inverse" className="mt-6 w-full">
-                  Set Up Direct Debit
-                </Button>
+                <SetUpDirectDebitButton variant="inverse" className="mt-6 w-full" />
               </Card>
             </StaggerItem>
 
