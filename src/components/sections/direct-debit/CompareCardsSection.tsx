@@ -3,9 +3,9 @@ import { Container } from "@/components/ui/Container";
 import { CenteredHeading } from "@/components/ui/CenteredHeading";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
 import { CheckListItem } from "@/components/ui/CheckListItem";
 import { SetUpDirectDebitButton } from "@/components/direct-debit-setup/SetUpDirectDebitButton";
+import { MakePaymentButton } from "@/components/online-payment/MakePaymentButton";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { StaggerItem } from "@/components/motion/StaggerItem";
 import { comparisonRows } from "@/lib/direct-debit-data";
@@ -67,9 +67,9 @@ export function CompareCardsSection() {
                   ))}
                 </ul>
 
-                <Button href="/online-payment" variant="secondary" className="mt-6 w-full">
+                <MakePaymentButton variant="secondary" className="mt-6 w-full">
                   Continue paying by card
-                </Button>
+                </MakePaymentButton>
               </Card>
             </StaggerItem>
           </div>

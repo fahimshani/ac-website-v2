@@ -1,11 +1,11 @@
 import { ShieldCheck, CreditCard, ArrowRight, BadgeCheck } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Rating } from "@/components/ui/Rating";
 import { Avatar } from "@/components/ui/Avatar";
 import { CheckListItem } from "@/components/ui/CheckListItem";
 import { SetUpDirectDebitButton } from "@/components/direct-debit-setup/SetUpDirectDebitButton";
+import { MakePaymentButton } from "@/components/online-payment/MakePaymentButton";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { StaggerItem } from "@/components/motion/StaggerItem";
 
@@ -61,9 +61,9 @@ export function DirectDebitHero() {
 
             <StaggerItem className="mt-8 flex flex-wrap gap-3">
               <SetUpDirectDebitButton variant="inverse" icon={<CreditCard className="h-4 w-4" />} />
-              <Button href="/online-payment" variant="outlineLight" icon={<ArrowRight className="h-4 w-4" />}>
+              <MakePaymentButton variant="outlineLight" icon={<ArrowRight className="h-4 w-4" />}>
                 Continue to online payment
-              </Button>
+              </MakePaymentButton>
             </StaggerItem>
 
             <StaggerItem className="mt-9 flex flex-wrap items-center gap-4">

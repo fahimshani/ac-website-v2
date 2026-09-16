@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { SetUpDirectDebitButton } from "@/components/direct-debit-setup/SetUpDirectDebitButton";
+import { MakePaymentButton } from "@/components/online-payment/MakePaymentButton";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { StaggerItem } from "@/components/motion/StaggerItem";
 
@@ -52,9 +53,9 @@ export function Hero() {
               <Button href="/direct-debit" variant="inverse" icon={<CreditCard className="h-4 w-4" />}>
                 Direct Debit Solutions
               </Button>
-              <Button href="/online-payment" variant="outlineLight">
+              <MakePaymentButton variant="outlineLight">
                 Online Payment
-              </Button>
+              </MakePaymentButton>
             </StaggerItem>
 
             <StaggerItem className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-2">
@@ -87,9 +88,9 @@ export function Hero() {
               <SetUpDirectDebitButton className="w-full">
                 Direct Debit Setup
               </SetUpDirectDebitButton>
-              <Button href="/online-payment" variant="secondary" className="w-full">
+              <MakePaymentButton variant="secondary" className="w-full">
                 Online Payment
-              </Button>
+              </MakePaymentButton>
             </div>
           </StaggerItem>
         </Container>

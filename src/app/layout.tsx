@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { DirectDebitSetupProvider } from "@/components/direct-debit-setup/DirectDebitSetupProvider";
+import { OnlinePaymentProvider } from "@/components/online-payment/OnlinePaymentProvider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -29,9 +30,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="flex min-h-full flex-col bg-white">
         <DirectDebitSetupProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <OnlinePaymentProvider>
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </OnlinePaymentProvider>
         </DirectDebitSetupProvider>
       </body>
     </html>

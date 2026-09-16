@@ -2,6 +2,7 @@ import { Phone, ShieldCheck, ChevronDown } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
+import { OnlinePaymentNavTrigger } from "@/components/online-payment/OnlinePaymentNavTrigger";
 import { navLinks } from "@/lib/data";
 
 export function Header() {
@@ -60,12 +61,9 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-5">
-            <a
-              href="/online-payment"
-              className="hidden text-sm font-semibold text-brand-700 hover:text-brand-800 sm:block"
-            >
+            <OnlinePaymentNavTrigger className="hidden text-sm font-semibold text-brand-700 hover:text-brand-800 sm:block">
               Online payment
-            </a>
+            </OnlinePaymentNavTrigger>
             <Button href="/direct-debit" size="sm">
               Direct Debit
             </Button>

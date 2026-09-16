@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
+import { OnlinePaymentNavTrigger } from "@/components/online-payment/OnlinePaymentNavTrigger";
 import { footerColumns } from "@/lib/data";
 
 function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -52,13 +53,21 @@ export function Footer() {
           <div key={column.title}>
             <h3 className="text-sm font-semibold text-white">{column.title}</h3>
             <ul className="mt-4 space-y-3">
-              {column.links.map((link) => (
-                <li key={link.href}>
-                  <a href={link.href} className="text-sm transition-colors hover:text-white">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              {column.links.map((link) =>
+                link.href === "/online-payment" ? (
+                  <li key={link.href}>
+                    <OnlinePaymentNavTrigger className="text-sm transition-colors hover:text-white">
+                      {link.label}
+                    </OnlinePaymentNavTrigger>
+                  </li>
+                ) : (
+                  <li key={link.href}>
+                    <a href={link.href} className="text-sm transition-colors hover:text-white">
+                      {link.label}
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
           </div>
         ))}
