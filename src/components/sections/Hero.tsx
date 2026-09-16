@@ -2,6 +2,7 @@ import { Anchor, CreditCard, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
+import { LogoMark } from "@/components/ui/LogoMark";
 import { SetUpDirectDebitButton } from "@/components/direct-debit-setup/SetUpDirectDebitButton";
 import { MakePaymentButton } from "@/components/online-payment/MakePaymentButton";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
@@ -12,18 +13,9 @@ const trustBadges = ["FCA Regulated", "ICAEW Licensed", "IPA Member"];
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700">
-      <svg
-        className="pointer-events-none absolute -right-24 top-1/2 hidden h-[420px] w-[420px] -translate-y-1/2 text-white/5 md:block"
-        viewBox="0 0 100 100"
-        fill="none"
-      >
-        <circle cx="50" cy="50" r="46" stroke="currentColor" strokeWidth="1.5" />
-        <path
-          d="M50 10v80M25 25l25-15 25 15M20 68l30 17 30-17M50 34a16 16 0 100 32 16 16 0 000-32z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-      </svg>
+      <LogoMark
+        className="pointer-events-none absolute -right-16 top-1/2 hidden h-[420px] w-[420px] -translate-y-1/2 text-white/5 md:block"
+      />
 
       <StaggerGroup amount={0.1} className="relative">
         <Container className="grid grid-cols-1 gap-12 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-24">
@@ -36,12 +28,13 @@ export function Hero() {
 
             <StaggerItem>
               <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl">
-                Expert Debt Solutions, Tailored For You
+                Expert Debt Solutions,{" "}
+                <span className="text-brand-100">Tailored For You</span>
               </h1>
             </StaggerItem>
 
             <StaggerItem>
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-white/75">
+              <p className="mt-5 max-w-xl text-base font-bold leading-relaxed text-white/75">
                 We provide practical, ethical, and legally compliant routes
                 out of debt — from Individual Voluntary Arrangements to
                 corporate insolvency. Trusted by thousands across the UK,

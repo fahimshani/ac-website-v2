@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { DestinationRow } from "@/components/ui/DestinationRow";
+import { AnchorMark } from "@/components/ui/AnchorMark";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { StaggerItem } from "@/components/motion/StaggerItem";
 
@@ -36,18 +37,9 @@ const destinations = [
 export function NotFoundContent() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-brand-50 via-brand-50 to-white">
-      <svg
-        className="pointer-events-none absolute -right-24 -top-10 hidden h-[480px] w-[480px] text-brand-700/[0.06] lg:block"
-        viewBox="0 0 100 100"
-        fill="none"
-      >
-        <circle cx="50" cy="50" r="46" stroke="currentColor" strokeWidth="1.5" />
-        <path
-          d="M50 10v80M25 25l25-15 25 15M20 68l30 17 30-17M50 34a16 16 0 100 32 16 16 0 000-32z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-      </svg>
+      <AnchorMark
+        className="pointer-events-none absolute -right-16 -top-6 hidden h-[480px] w-[480px] text-brand-700/[0.06] lg:block"
+      />
 
       <Container className="relative flex min-h-screen items-center py-16">
         <StaggerGroup className="grid w-full grid-cols-1 gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">

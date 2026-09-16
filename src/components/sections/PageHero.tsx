@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import { ChevronRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionHeading";
+import { LogoMark } from "@/components/ui/LogoMark";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { StaggerItem } from "@/components/motion/StaggerItem";
 
@@ -34,7 +35,7 @@ export function PageHero({
 }: {
   crumbs: Crumb[];
   label: string;
-  title: string;
+  title: ReactNode;
   description: string;
   stats?: Stat[];
   aside?: ReactNode;
@@ -42,7 +43,7 @@ export function PageHero({
   const textBlock = (
     <StaggerItem className={aside ? undefined : "max-w-2xl"}>
       <SectionLabel>{label}</SectionLabel>
-      <h1 className="text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+      <h1 className="text-4xl font-bold leading-[1.12] tracking-tight text-balance text-ink sm:text-5xl sm:leading-[1.08]">
         {title}
       </h1>
       <p className="mt-4 text-base leading-relaxed text-muted">{description}</p>
@@ -51,18 +52,9 @@ export function PageHero({
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-brand-50 via-brand-50 to-white">
-      <svg
-        className="pointer-events-none absolute -right-16 top-0 hidden h-[360px] w-[360px] text-brand-700/[0.06] md:block"
-        viewBox="0 0 100 100"
-        fill="none"
-      >
-        <circle cx="50" cy="50" r="46" stroke="currentColor" strokeWidth="1.5" />
-        <path
-          d="M50 10v80M25 25l25-15 25 15M20 68l30 17 30-17M50 34a16 16 0 100 32 16 16 0 000-32z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-      </svg>
+      <LogoMark
+        className="pointer-events-none absolute -right-12 top-0 hidden h-[360px] w-[360px] text-brand-700/[0.06] md:block"
+      />
 
       <StaggerGroup className="relative">
         <Container className="pt-8 pb-12 sm:pt-10 sm:pb-16">

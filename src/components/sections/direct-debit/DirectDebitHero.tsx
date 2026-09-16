@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Rating } from "@/components/ui/Rating";
 import { Avatar } from "@/components/ui/Avatar";
 import { CheckListItem } from "@/components/ui/CheckListItem";
+import { LogoMark } from "@/components/ui/LogoMark";
 import { SetUpDirectDebitButton } from "@/components/direct-debit-setup/SetUpDirectDebitButton";
 import { MakePaymentButton } from "@/components/online-payment/MakePaymentButton";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
@@ -20,18 +21,9 @@ const safeChecks = [
 export function DirectDebitHero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700">
-      <svg
-        className="pointer-events-none absolute -right-24 top-1/2 hidden h-[420px] w-[420px] -translate-y-1/2 text-white/5 md:block"
-        viewBox="0 0 100 100"
-        fill="none"
-      >
-        <circle cx="50" cy="50" r="46" stroke="currentColor" strokeWidth="1.5" />
-        <path
-          d="M50 10v80M25 25l25-15 25 15M20 68l30 17 30-17M50 34a16 16 0 100 32 16 16 0 000-32z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-        />
-      </svg>
+      <LogoMark
+        className="pointer-events-none absolute -right-16 top-1/2 hidden h-[420px] w-[420px] -translate-y-1/2 text-white/5 md:block"
+      />
 
       <StaggerGroup amount={0.1} className="relative">
         <Container className="grid grid-cols-1 gap-12 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-24">

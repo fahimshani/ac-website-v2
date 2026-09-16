@@ -19,7 +19,12 @@ export default function ServicesPage() {
       <PageHero
         crumbs={[{ label: "Home", href: "/" }, { label: "Our Services" }]}
         label="Insolvency Specialists"
-        title="The right solution for your situation."
+        title={
+          <>
+            The right solution{" "}
+            <span className="text-brand-700">for your&nbsp;situation.</span>
+          </>
+        }
         description="Whether you're an individual overwhelmed by debt or a business facing insolvency, we provide practical, ethical routes forward — without judgement."
       />
 
