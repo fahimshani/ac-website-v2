@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { DestinationRow } from "@/components/ui/DestinationRow";
-import { AnchorMark } from "@/components/ui/AnchorMark";
+import { LogoMark } from "@/components/ui/LogoMark";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { StaggerItem } from "@/components/motion/StaggerItem";
 
@@ -37,7 +37,7 @@ const destinations = [
 export function NotFoundContent() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-brand-50 via-brand-50 to-white">
-      <AnchorMark
+      <LogoMark
         className="pointer-events-none absolute -right-16 -top-6 hidden h-[480px] w-[480px] text-brand-700/[0.06] lg:block"
       />
 
