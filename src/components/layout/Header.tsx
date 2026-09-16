@@ -25,16 +25,38 @@ export function Header() {
           <Logo />
 
           <nav className="hidden items-center gap-8 lg:flex">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="flex items-center gap-1 text-sm font-medium text-ink/80 transition-colors hover:text-brand-700"
-              >
-                {link.label}
-                {link.label === "Get Help" && <ChevronDown className="h-3.5 w-3.5" />}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.children ? (
+                <div key={link.label} className="group relative">
+                  <span className="flex cursor-default items-center gap-1 text-sm font-medium text-ink/80 transition-colors group-hover:text-brand-700">
+                    {link.label}
+                    <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
+                  </span>
+
+                  <div className="invisible absolute left-1/2 top-full z-50 w-56 -translate-x-1/2 pt-3 opacity-0 transition-opacity group-hover:visible group-hover:opacity-100">
+                    <div className="overflow-hidden rounded-xl border border-black/5 bg-white py-2 shadow-lg shadow-black/5">
+                      {link.children.map((child) => (
+                        <a
+                          key={child.href}
+                          href={child.href}
+                          className="block px-4 py-2.5 text-sm font-medium text-ink/80 transition-colors hover:bg-brand-50 hover:text-brand-700"
+                        >
+                          {child.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-medium text-ink/80 transition-colors hover:text-brand-700"
+                >
+                  {link.label}
+                </a>
+              )
+            )}
           </nav>
 
           <div className="flex items-center gap-5">

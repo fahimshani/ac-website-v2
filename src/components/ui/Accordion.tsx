@@ -28,11 +28,18 @@ export function Accordion({
               type="button"
               onClick={() => setOpenIndex(isOpen ? null : i)}
               aria-expanded={isOpen}
-              className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left sm:px-6"
+              className="flex w-full items-center gap-3 px-5 py-4 text-left sm:px-6"
             >
+              {isOpen ? (
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-700 text-[11px] font-bold text-white">
+                  ?
+                </span>
+              ) : (
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-700/40" />
+              )}
               <span
                 className={cn(
-                  "text-sm font-semibold",
+                  "flex-1 text-sm font-semibold",
                   isOpen ? "text-brand-700" : "text-ink"
                 )}
               >
@@ -52,7 +59,7 @@ export function Accordion({
               )}
             >
               <div className="overflow-hidden">
-                <p className="px-5 pb-4 text-sm leading-relaxed text-muted sm:px-6">
+                <p className="pb-4 pl-13 pr-5 text-sm leading-relaxed text-muted sm:pl-14 sm:pr-6">
                   {item.answer}
                 </p>
               </div>

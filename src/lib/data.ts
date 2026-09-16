@@ -1,7 +1,13 @@
 export const navLinks = [
   { label: "About us", href: "/about" },
   { label: "Our Services", href: "/services" },
-  { label: "Get Help", href: "/get-help" },
+  {
+    label: "Get Help",
+    children: [
+      { label: "Help Center", href: "/get-help" },
+      { label: "Resources & Policies", href: "/resources" },
+    ],
+  },
   { label: "News", href: "/news" },
   { label: "Contact", href: "/contact" },
 ];
